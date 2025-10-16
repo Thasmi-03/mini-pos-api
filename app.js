@@ -3,7 +3,10 @@ import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 
-import userRoutes from "./routes/userRoute.js";
+import authRoutes from "./routes/authRoutes.js";
+app.use("/api/users", authRoutes);
+
+
 dotenv.config();
 
 const app = express();

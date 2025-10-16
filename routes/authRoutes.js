@@ -4,11 +4,11 @@ import { register, login } from "../controllers/authController.js";
 
 const router = express.Router(); // create router
 
-// 🟢 Register route
+//  Register route
 router.post("/register", register);
 
-// 🟢 Login route
+//  Login route
 router.post("/login", login);
 
-// 🧩 Export router
+//  Export router
 export default router;

@@ -3,13 +3,12 @@ import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
 
-import authRoutes from "./routes/authRoutes.js";
-app.use("/api/users", authRoutes);
 
 
 dotenv.config();
 
 const app = express();
+app.use(express.json());
 const PORT = process.env.PORT;
 const connectDB = async () => {
   try {
@@ -22,7 +21,6 @@ const connectDB = async () => {
 };
 connectDB();
 
-app.use("/api/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Express");
